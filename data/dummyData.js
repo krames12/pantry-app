@@ -5,7 +5,7 @@ const foodInventory = {
     {
       id: uuidv4(),
       name: "Vegetables",
-      products: [
+      items: [
         {
           id: uuidv4(),
           name: "Potatoes",

@@ -15,10 +15,10 @@ const Stock = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Heading>Your Pantry</Heading>
-    {dummyData.categories.map( ({id, name, products}) => (
+    {dummyData.categories.map( ({id, name, items}) => (
       <>
         <Heading as="h2" key={`category-heading-${id}`}>{name}</Heading>
-        <ItemList products={products} />
+        <ItemList products={items} />
       </>
     ))}
   </div>
