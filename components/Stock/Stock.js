@@ -3,11 +3,7 @@ import styles from "./Stock.module.css";
 import { Heading } from "@chakra-ui/react";
 import ItemList from "../ItemList/ItemList";
 
-import dummyData from "../../data/dummyData";
-
-console.log(dummyData.categories);
-
-const Stock = () => (
+const Stock = ({categories}) => (
   <div className={styles.container}>
     <Head>
       <title>Create Next App</title>
@@ -15,13 +11,13 @@ const Stock = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Heading>Your Pantry</Heading>
-    {dummyData.categories.map( ({id, name, items}) => (
+    {categories.map( ({id, name, category_items}) => (
       <>
         <Heading as="h2" key={`category-heading-${id}`}>{name}</Heading>
-        <ItemList products={items} />
+        <ItemList items={category_items} />
       </>
     ))}
   </div>
-)
+);
 
 export default Stock;

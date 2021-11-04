@@ -9,7 +9,7 @@ import {
   TableCaption
 } from "@chakra-ui/react";
 
-const ItemList = ({products}) => (
+const ItemList = ({items}) => (
   <Table variant="simple">
     <TableCaption>A list of currently available items in your pantry</TableCaption>
     <Thead>
@@ -20,11 +20,11 @@ const ItemList = ({products}) => (
       </Tr>
     </Thead>
     <Tbody>
-      {products.map( ({id, name, inStock, unit, restockSoon}) => (
+      {items?.map( ({item: {id, name, in_stock, unit, restock_soon}}) => (
         <Tr key={id}>
           <Td>{name}</Td>
-          <Td>{inStock} - {unit}</Td>
-          <Td>{`${restockSoon ? "Restock!" : "You can wait"}`}</Td>
+          <Td>{in_stock} - {unit}</Td>
+          <Td>{`${restock_soon ? "Restock!" : "You can wait"}`}</Td>
         </Tr>
       ))}
     </Tbody>
